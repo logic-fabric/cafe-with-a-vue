@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Cafe with a Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <div class="app" id="app">
+    <h1>{{ restaurantName }}</h1>
+
+    <p class="description">
+      Welcome to {{ restaurantName }}! We are known for our freshly baked bread and
+      french pastries! Give you morning a warm start or treat yourself in the
+      middle of the day. Our butter is imported from local farmers in France.
+      Once you take your first bite, you will see why everyone can't get
+      enough!
+    </p>
+
+    <footer class="footer">
+      <p>Copyright {{ restaurantName }} 2020</p>
+    </footer>
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        restaurantName: "The French Bakery"
+      }
+    })
+  </script>
+</body>
+
+</html>
