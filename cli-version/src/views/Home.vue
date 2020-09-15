@@ -19,6 +19,7 @@
         :name="item.name"
         :image="item.image"
         :quantity="item.quantity"
+        :price="item.price"
         :inStock="item.inStock"
         :key="item.name"
       />
@@ -53,7 +54,8 @@ export default {
             alt: 'A croissant'
           },
           inStock: true,
-          quantity: 1
+          quantity: 1,
+          price: 2.99
         },
         {
           name: 'French Baguette',
@@ -62,7 +64,8 @@ export default {
             alt: 'Four French Baguettes'
           },
           inStock: true,
-          quantity: 1
+          quantity: 1,
+          price: 1.49
         },
         {
           name: 'Éclair',
@@ -71,7 +74,8 @@ export default {
             alt: 'Chocolate Éclair'
           },
           inStock: false,
-          quantity: 1
+          quantity: 1,
+          price: 3.19
         }
       ]
     }
