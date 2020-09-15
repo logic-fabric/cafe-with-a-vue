@@ -15,17 +15,23 @@ export default {
   <div>
     <h2>Contact Us</h2>
 
-    <p>Address: {{ address }}</p>
-    <p>Phone: {{ phone }}</p>
-    <p>Email: {{ email }}</p>
+    <p>Address: <strong>{{ address }}</strong></p>
+    <p>Phone: <strong>{{ phone }}</strong></p>
+    <p>Email: <strong>{{ email }}</strong></p>
 
-    <p>Hours:</p>
+    <h2>Hours</h2>
+
     <ul>
-      <li>M-F: 06:00 to 16:00</li>
-      <li>Saturday: 07:00 to 14:00</li>
-      <li>Sunday: 07:00 to 12:00</li>
+      <li>M-F: <strong>06:00 to 16:00</strong></li>
+      <li>Saturday: <strong>07:00 to 14:00</strong></li>
+      <li>Sunday: <strong>07:00 to 12:00</strong></li>
     </ul>
   </div>
 </template>
 
-<style></style>
+<style lang="scss">
+ul {
+  padding: 0 32px;
+  list-style: none;
+}
+</style>
