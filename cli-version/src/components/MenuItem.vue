@@ -1,13 +1,7 @@
 <script>
 export default {
-  name:'MenuItem',
-  props: [
-    'addToShoppingCart',
-    'image',
-    'inStock',
-    'name',
-    'quantity'
-  ]
+  name: 'MenuItem',
+  props: ['addToShoppingCart', 'image', 'inStock', 'name', 'quantity']
 }
 </script>
 
@@ -20,11 +14,11 @@ export default {
 
       <p v-if="inStock">In Stock</p>
       <p v-else>Out of Stock</p>
-
+      
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
-        <input id="add-item-quantity" v-model.number="quantity" type="number">
-        <button @click="addToShoppingCart(name, quantity)">
+        <input v-model.number="quantity" id="add-item-quantity" type="number" />
+        <button @click="addToShoppingCart(quantity)">
           Add to Shopping Cart
         </button>
       </div>
