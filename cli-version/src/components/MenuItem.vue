@@ -1,6 +1,11 @@
 <script>
+import BaseButton from './BaseButton.vue'
+
 export default {
   name: 'MenuItem',
+  components: {
+    BaseButton
+  },
   props: {
     image: {
       type: Object,
@@ -67,9 +72,9 @@ export default {
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
-        <button @click="updateShoppingCart(quantity)">
+        <BaseButton @click="updateShoppingCart(quantity)">
           Add to Shopping Cart
-        </button>
+        </BaseButton>
       </div>
     </div>
   </div>
@@ -86,8 +91,8 @@ export default {
   background: #f5f0f0;
 
   &__image {
-    max-width: 300px;
-    height: 185px;
+    width: 250px;
+    height: 155px;
     margin: 0 16px 0 0;
     border-radius: 8px;
   }
@@ -98,20 +103,5 @@ export default {
     border-radius: 4px;
     font-size: 18px;
     text-align: center;
-  }
-
-  button {
-    margin: 8px;
-    padding: 8px 32px;
-    border: 0;
-    border-radius: 32px;
-    outline: none;
-    color: white;
-    font-weight: bold;
-    background: coral;
-
-    &:hover {
-      background: darken(coral, 10%);
-    }
   }
 }</style>
