@@ -2,10 +2,6 @@
 export default {
   name: 'MenuItem',
   props: {
-    addToShoppingCart: {
-      type: Function,
-      required: true
-    }, 
     image: {
       type: Object,
       required: true
@@ -41,6 +37,11 @@ export default {
       }
     }
   },
+  methods: {
+    updateShoppingCart(quantity) {
+      this.$emit('add-items-to-cart', quantity)
+    }
+  },
   beforeMount() {
     const today = new Date().getDay();
 
@@ -66,7 +67,7 @@ export default {
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
-        <button @click="addToShoppingCart(quantity)">
+        <button @click="updateShoppingCart(quantity)">
           Add to Shopping Cart
         </button>
       </div>
@@ -104,8 +105,13 @@ export default {
     padding: 8px 32px;
     border: 0;
     border-radius: 32px;
+    outline: none;
     color: white;
     font-weight: bold;
     background: coral;
+
+    &:hover {
+      background: darken(coral, 10%);
+    }
   }
 }</style>

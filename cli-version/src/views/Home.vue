@@ -15,13 +15,14 @@
 
       <MenuItem
         v-for="item in simpleMenu"
-        :addToShoppingCart="addToShoppingCart"
+        @add-items-to-cart="addToShoppingCart"
         :name="item.name"
         :image="item.image"
         :quantity="item.quantity"
         :price="item.price"
         :inStock="item.inStock"
         :key="item.name"
+
       />
     </section>
 
@@ -88,7 +89,7 @@ export default {
   },
   methods: {
     addToShoppingCart(amount) {
-      this.shoppingCart += amount
+      this.shoppingCart += amount;
     }
   }
 }
