@@ -1,6 +1,5 @@
 <script>
 import BaseButton from './BaseButton.vue'
-
 export default {
   name: 'MenuItem',
   components: {
@@ -10,22 +9,22 @@ export default {
     image: {
       type: Object,
       required: true
-    }, 
+    },
     inStock: {
       type: Boolean,
       required: true
-    }, 
+    },
     name: {
       type: String,
       required: true
-    }, 
+    },
     price: {
       type: Number,
       required: true
-    }, 
+    },
     quantity: {
       type: Number,
-      dafault: 1
+      defaut: 1
     }
   },
   data() {
@@ -48,10 +47,9 @@ export default {
     }
   },
   beforeMount() {
-    const today = new Date().getDay();
-
+    const today = new Date().getDate()
     if (today % 2 === 0) {
-      this.onSale = true;
+      this.onSale = true
     }
   }
 }
@@ -60,20 +58,16 @@ export default {
 <template>
   <div class="menu-item">
     <img class="menu-item__image" :src="image.source" :alt="image.alt" />
-
     <div>
       <h3>{{ name }}</h3>
-
-      <p>Price: ${{ generatedPrice }}<span v-if="onSale"> | 10% off today!</span></p>
-
+      <p>Price: {{ generatedPrice }} <span v-if="onSale">(10% off!)</span></p>
       <p v-if="inStock">In Stock</p>
       <p v-else>Out of Stock</p>
-      
       <div>
         <label for="add-item-quantity">Quantity: {{ quantity }}</label>
         <input v-model.number="quantity" id="add-item-quantity" type="number" />
         <BaseButton @click="updateShoppingCart(quantity)">
-          Add to Shopping Cart
+          Add to shopping cart
         </BaseButton>
       </div>
     </div>
