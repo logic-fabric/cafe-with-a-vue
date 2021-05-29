@@ -1,3 +1,3 @@
-# Vue.js training repository
+# Cafe With a Vue - Sept 2020
 
-Training repo associated to the OpenClassrooms MOOC *Create a Web Application With Vue.js* - Sept 2020
+Training repo dedicated to the **OpenClassrooms MOOC** _Create a Web Application With Vue.js_.
